@@ -1,0 +1,315 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: #d4af37;
+    --secondary: #7c3aed;
+    --accent: #c084fc;
+  }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+html, body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    color: #ffffff;
+    background-color: #0a0a0a;
+    background-attachment: fixed;
+    text-rendering: optimizeSpeed;
+    transform: translateZ(0);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(212, 175, 55, 0.6) #0f172a;
+  }
+
+  ::-webkit-scrollbar {
+    width: 9px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0f172a;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #8f7422, #4e2394, #6c4891);
+    border-radius: 999px;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .premium-blur {
+    backdrop-filter: blur(20px) saturate(180%);
+    background-color: rgba(9, 11, 20, 0.7);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+  }
+
+  .wave-emoji {
+    display: inline-block;
+    animation: wave 3s infinite;
+    transform-origin: 80% 80%;
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    will-change: transform, opacity;
+  }
+
+  .mesh-blob {
+    position: absolute;
+    border-radius: 999999px;
+    filter: blur(64px);
+    opacity: 0.45;
+    animation: meshFloat 22s ease-in-out infinite;
+    mix-blend-mode: screen;
+  }
+  
+  @keyframes wave {
+    0% { transform: rotate(0deg); }
+    20% { transform: rotate(14deg); }
+    40% { transform: rotate(-8deg); }
+    60% { transform: rotate(14deg); }
+    80% { transform: rotate(-4deg); }
+    100% { transform: rotate(0deg); }
+  }
+
+  @keyframes meshFloat {
+    0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+    25% { transform: translate3d(28px, -20px, 0) scale(1.08); }
+    50% { transform: translate3d(-24px, 26px, 0) scale(0.94); }
+    75% { transform: translate3d(20px, 16px, 0) scale(1.03); }
+  }
+
+  @keyframes divFlow {
+    0% { background-position: 0% 50%, 100% 50%; }
+    50% { background-position: 100% 50%, 0% 50%; }
+    100% { background-position: 0% 50%, 100% 50%; }
+  }
+
+  @keyframes rgbBorderShift {
+    0% { background-position: 0% 50%, 0% 50%; }
+    50% { background-position: 100% 50%, 100% 50%; }
+    100% { background-position: 0% 50%, 0% 50%; }
+  }
+
+  @keyframes gridShift {
+    0% { transform: translate3d(0, 0, 0); opacity: 0.24; }
+    50% { transform: translate3d(0, 18px, 0); opacity: 0.18; }
+    100% { transform: translate3d(0, 0, 0); opacity: 0.24; }
+  }
+
+  @keyframes sweepMove {
+    0% { transform: translateX(-130%) skewX(-14deg); opacity: 0; }
+    12% { opacity: 0.22; }
+    35% { opacity: 0.1; }
+    55% { transform: translateX(130%) skewX(-14deg); opacity: 0; }
+    100% { transform: translateX(130%) skewX(-14deg); opacity: 0; }
+  }
+
+  @keyframes rgbSlideLeft {
+    0% { transform: translateX(-120%); opacity: 0; }
+    8% { opacity: 0.55; }
+    45% { transform: translateX(0%); opacity: 0.5; }
+    50% { transform: translateX(20%); opacity: 0; }
+    100% { transform: translateX(20%); opacity: 0; }
+  }
+
+  @keyframes rgbSlideRight {
+    0% { transform: translateX(120%); opacity: 0; }
+    8% { opacity: 0.55; }
+    45% { transform: translateX(0%); opacity: 0.5; }
+    50% { transform: translateX(-20%); opacity: 0; }
+    100% { transform: translateX(-20%); opacity: 0; }
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+}
+
+.premium-grid {
+  background-image:
+    radial-gradient(circle, rgba(143, 116, 34, 0.16) 1.6px, transparent 2px),
+    radial-gradient(circle, rgba(78, 35, 148, 0.14) 1.4px, transparent 2px);
+  background-size: 44px 44px, 64px 64px;
+  background-position: 0 0, 18px 18px;
+  mask-image: radial-gradient(circle at 50% 40%, black 30%, transparent 75%);
+  /* animation: gridShift 20s ease-in-out infinite; */
+}
+
+.light-sweep {
+  width: 44%;
+  background: linear-gradient(
+    100deg,
+    transparent 0%,
+    rgba(143, 116, 34, 0.14) 45%,
+    rgba(137, 109, 168, 0.08) 50%,
+    transparent 68%
+  );
+  animation: sweepMove 12s ease-in-out infinite;
+}
+
+.rgb-slide-line {
+  left: 12%;
+  width: 76%;
+  height: 2px;
+  border-radius: 999px;
+  filter: blur(0.2px);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 110, 156, 0.18) 0%,
+    rgba(122, 198, 255, 0.2) 45%,
+    rgba(196, 145, 255, 0.2) 100%
+  );
+  box-shadow: 0 0 16px rgba(122, 198, 255, 0.18), 0 0 26px rgba(196, 145, 255, 0.14);
+}
+
+.rgb-slide-left {
+  animation: rgbSlideLeft 6s ease-in-out infinite;
+}
+
+.rgb-slide-right {
+  animation: rgbSlideRight 6s ease-in-out infinite;
+}
+
+/* Remove yellow click/focus outline and use custom border style */
+.portfolio-root *:focus,
+.portfolio-root *:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Dark multicolor hover border for bordered div cards */
+.portfolio-root main div[class*="border"] {
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* 
+.portfolio-root main div[class*="border"]:hover,
+.portfolio-root main div[class*="border"]:focus-within {
+  border: 1px solid transparent !important;
+  background-image:
+    linear-gradient(rgba(22, 24, 35, 0.88), rgba(18, 20, 32, 0.88)),
+    linear-gradient(120deg, rgba(122, 77, 183, 0.9), rgba(60, 109, 170, 0.85), rgba(145, 66, 110, 0.88), rgba(122, 77, 183, 0.9));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: 0 12px 30px rgba(9, 11, 20, 0.34);
+}
+*/
+
+@keyframes premiumGradientShift {
+  0%, 100% {
+    background-position: 0% 50%, 100% 50%;
+  }
+  50% {
+    background-position: 100% 50%, 0% 50%;
+  }
+}
+
+.premium-bg-gradient {
+  background-color: #070913;
+  background-image:
+    linear-gradient(125deg, rgba(62, 44, 120, 0.42), rgba(44, 50, 115, 0.4), rgba(98, 49, 120, 0.36), rgba(34, 38, 76, 0.38)),
+    linear-gradient(300deg, rgba(35, 38, 76, 0.42), rgba(76, 44, 118, 0.34), rgba(43, 57, 109, 0.34), rgba(91, 45, 104, 0.3));
+  background-size: 220% 220%, 220% 220%;
+  /* animation: premiumGradientShift 26s ease-in-out infinite; */
+}
+
+.premium-corner-glow {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(80px);
+  opacity: 0.22;
+  animation: meshFloat 35s ease-in-out infinite;
+  will-change: transform;
+}
+
+.premium-corner-a {
+  width: 30rem;
+  height: 30rem;
+  top: -8rem;
+  left: -6rem;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.6), transparent 65%);
+}
+
+.premium-corner-b {
+  width: 28rem;
+  height: 28rem;
+  top: 18%;
+  right: -8rem;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.56), transparent 66%);
+  animation-delay: 5s;
+}
+
+.premium-corner-c {
+  width: 26rem;
+  height: 26rem;
+  bottom: -10rem;
+  left: 30%;
+  background: radial-gradient(circle, rgba(219, 39, 119, 0.42), transparent 68%);
+  animation-delay: 10s;
+}
+
+.premium-grain {
+  opacity: 0.045;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.8) 0.5px, transparent 0.5px);
+  background-size: 3px 3px;
+}
+
+.premium-dark-overlay {
+  background: linear-gradient(to bottom, rgba(8, 10, 20, 0.58), rgba(8, 10, 20, 0.72));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .premium-grid,
+  .light-sweep,
+  .mesh-blob,
+  .rgb-slide-left,
+  .rgb-slide-right,
+  .premium-bg-gradient,
+  .premium-corner-glow {
+    animation: none;
+  }
+}
+
+.mask-radial-fade {
+  mask-image: radial-gradient(circle at center, black 20%, transparent 80%);
+  -webkit-mask-image: radial-gradient(circle at center, black 20%, transparent 80%);
+}
+
+/* Modern Section Spacing (Replacing slanted pseudo elements) */
+main > section {
+  position: relative;
+  z-index: 1;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
