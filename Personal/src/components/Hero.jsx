@@ -6,11 +6,11 @@ import ImageSlider from './ImageSlider';
 const Hero = () => {
 
   const handleDownloadResume = () => {
-    const resumeUrl = '/resume.pdf';
+    const resumeUrl = '/Resume.pdf';
 
     const link = document.createElement('a');
     link.href = resumeUrl;
-    link.download = 'Sahil_Resume.pdf';
+    link.download = 'Resume.pdf';
 
     document.body.appendChild(link);
     link.click();
