@@ -9,7 +9,7 @@ I am a B.Tech student with a strong passion for software development and technol
 I am continuously learning and improving my skills in modern web technologies and aiming to become a full-stack developer. This portfolio reflects my learning journey, growth, and dedication towards development. 
  
 🎯 Purpose of This Portfolio
-
+ 
 The main purpose of creating this portfolio is to showcase my technical skills, highlight my projects, and present my resume in a professional and structured manner. It also helps in demonstrating my ability to design and develop real-world web applications.
 
 This portfolio acts as a personal branding tool that can be shared with recruiters, collaborators, and professionals in the industry.
