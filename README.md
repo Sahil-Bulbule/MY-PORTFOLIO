@@ -14,7 +14,7 @@ The main purpose of creating this portfolio is to showcase my technical skills, 
 
 This portfolio acts as a personal branding tool that can be shared with recruiters, collaborators, and professionals in the industry.
 
-⚙️ Technologies Used
+⚙️ Technologies Used 
 
 This portfolio is built using modern frontend development technologies. It includes React.js for building the user interface, along with HTML, CSS, and JavaScript for structure, styling, and functionality. The project is optimized for performance and responsiveness across all devices.
 
