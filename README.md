@@ -6,7 +6,7 @@ This is a personal portfolio website built to represent my skills, projects, and
    
 I am a B.Tech student with a strong passion for software development and technology. My interest lies in frontend development, Python programming, and artificial intelligence and machine learning. I enjoy building user-friendly and responsive web applications that solve real-world problems and improve user experience.
 
-I am continuously learning and improving my skills in modern web technologies and aiming to become a full-stack developer. This portfolio reflects my learning journey, growth, and dedication towards development.
+I am continuously learning and improving my skills in modern web technologies and aiming to become a full-stack developer. This portfolio reflects my learning journey, growth, and dedication towards development. 
 
 🎯 Purpose of This Portfolio
 
